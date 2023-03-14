@@ -5,7 +5,7 @@ issues with the Family Sharing, which shares the photos, but not
 the folder and album structure.
 
 There are two scripts:
-- [PhotosTagger.sh](src/PhotosTagger.js) -- adds keywords to all media items with the folder/album path
+- [PhotosTagger.js](src/PhotosTagger.js) -- adds keywords to all media items with the folder/album path
 - [PhotosCreateFolders.js](src/PhotosCreateFolders.js) -- reads keywords and re-creates the folder and album structure
 
 ## Examples:
