@@ -1,5 +1,5 @@
 // photos recreate folder structure script
-const TAGPREFIX = "P:"
+const TAGPREFIX = "X:"
 
 ObjC.import('stdlib')
 const argv = $.NSProcessInfo.processInfo.arguments.js.splice(4);
@@ -31,7 +31,10 @@ function findAlbum(folder, path, albumName) {
     const foundFolder = folder.folders.whose({name: path[0]});
     if (foundFolder.length === 0) {
         console.log(`> creating new folder: ${path[0]} at ${folder.name()}`);
-        const subFolder = app.make({new: "folder", named: path[0], at: folder });
+        createFolder = {new: "folder", named: path[0], at: folder };
+        // we can't use 'at' when we are at the top level
+        if(folder instanceof Application) delete createFolder.at;
+        const subFolder = app.make(createFolder);
         return findAlbum(subFolder, path.slice(1), albumName);
     } else {
         return findAlbum(foundFolder[0], path.slice(1), albumName);
