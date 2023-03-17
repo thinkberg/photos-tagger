@@ -1,5 +1,5 @@
 // photos recreate folder structure script
-const TAGPREFIX = "X:"
+const TAGPREFIX = "P:"
 
 ObjC.import('stdlib')
 const argv = $.NSProcessInfo.processInfo.arguments.js.splice(4);
